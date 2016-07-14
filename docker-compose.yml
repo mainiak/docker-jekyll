@@ -1,0 +1,12 @@
+# https://docs.docker.com/compose/compose-file/
+version: "2"
+services:
+  jekyll:
+    build: .
+    container_name: jekyll
+    #command: serve --host=0.0.0.0
+    entrypoint: jekyll serve --host=0.0.0.0
+    ports:
+      - "127.0.0.1:4000:4000"
+    volumes:
+      - ./site:/data
